@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Online Quiz Maker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Online Quiz Maker</h1>
+            <nav>
+                <button onclick="showSection('home')">Home</button>
+                <button onclick="showSection('login')">Login</button>
+                <button onclick="showSection('signup')">Sign Up</button>
+                <button onclick="showSection('admin')">Admin Dashboard</button>
+            </nav>
+        </header>
+        <main>
+            <section id="home">
+                <h2>Welcome</h2>
+                <button onclick="showSection('create-quiz')">Create Quiz</button>
+                <button onclick="showSection('quiz-list')">Take Quiz</button>
+            </section>
+            <section id="login" class="hidden">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <label for="login-email">Email:</label>
+                    <input type="email" id="login-email" name="email" required>
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" name="password" required>
+                    <button type="submit">Login</button>
+                </form>
+            </section>
+            <section id="signup" class="hidden">
+                <h2>Sign Up</h2>
+                <form id="signup-form">
+                    <label for="signup-name">Name:</label>
+                    <input type="text" id="signup-name" name="name" required>
+                    <label for="signup-email">Email:</label>
+                    <input type="email" id="signup-email" name="email" required>
+                    <label for="signup-password">Password:</label>
+                    <input type="password" id="signup-password" name="password" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </section>
+            <section id="create-quiz" class="hidden">
+                <h2>Create a Quiz</h2>
+                <form id="quiz-form">
+                    <label for="quiz-name">Quiz Name:</label>
+                    <input type="text" id="quiz-name" name="quiz-name" required>
+                    <label for="quiz-description">Quiz Description:</label>
+                    <textarea id="quiz-description" name="quiz-description" required></textarea>
+                    <label for="question">Question:</label>
+                    <input type="text" id="question" name="question" required>
+                    <label for="option1">Option 1:</label>
+                    <input type="text" id="option1" name="option1" required>
+                    <label for="option2">Option 2:</label>
+                    <input type="text" id="option2" name="option2" required>
+                    <label for="option3">Option 3:</label>
+                    <input type="text" id="option3" name="option3" required>
+                    <label for="option4">Option 4:</label>
+                    <input type="text" id="option4" name="option4" required>
+                    <label for="correct">Correct Option:</label>
+                    <select id="correct" name="correct" required>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                        <option value="4">Option 4</option>
+                    </select>
+                    <button type="submit">Save Quiz</button>
+                </form>
+            </section>
+            <section id="quiz-list" class="hidden">
+                <h2>Take a Quiz</h2>
+                <div id="quiz-list-container">
+                    <!-- Dynamic quiz list goes here -->
+                </div>
+            </section>
+            <section id="take-quiz" class="hidden">
+                <h2>Take a Quiz</h2>
+                <div id="quiz-container">
+                    <!-- Quiz questions will be dynamically loaded here -->
+                </div>
+            </section>
+            <section id="quiz-result" class="hidden">
+                <h2>Quiz Results</h2>
+                <div id="result"></div>
+                <button onclick="showSection('quiz-list')">Back to Quiz List</button>
+            </section>
+            <section id="admin" class="hidden">
+                <h2>Admin Dashboard</h2>
+                <div id="admin-container">
+                    <!-- Admin functionalities like user and quiz management -->
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Quiz Maker. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
